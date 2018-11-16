@@ -16,6 +16,46 @@ function task1($strings, $logic_value)
     }
 }
 
+function task2($dataArray, $tally)
+{
+    $calc = null;
+    foreach ($dataArray as $value) {
+        switch ($tally) {
+            case "+":
+                $calc += $value;
+                break;
+            case "-":
+                if (empty($res)) {
+                    $calc = $value;
+                } else {
+                    $calc -= $value;
+                }
+                break;
+            case "*":
+                if (empty($calc)) {
+                    $calc = $value;
+                } else {
+                    $calc *= $value;
+                }
+                break;
+            case "/":
+                if ($value == 0) {
+                    echo " 0 в примере - делить нельзя";
+                    return null;
+                }
+                if (empty($calc)) {
+                    $calc = $value;
+                } else {
+                    $calc /= $value;
+                }
+                break;
+        }
+    }
+
+    return $calc;
+}
+
+
 function task3($rows = 1, $cols = 1)
 {
     if (is_int($rows) and is_int($cols)) {
@@ -29,7 +69,7 @@ function task3($rows = 1, $cols = 1)
         }
         echo '</table>';
     } else {
-        echo  'Вы ввели некорректные значения- ввидите 2 числа через запятую';
+        echo 'Вы ввели некорректные значения- ввидите 2 числа через запятую';
     }
 }
 

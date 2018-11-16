@@ -16,7 +16,7 @@ function task1($strings, $logic_value)
     }
 }
 
-function task2($dataArray, $tally)
+function task2($tally, $dataArray)
 {
     $calc = null;
     foreach ($dataArray as $value) {
@@ -89,4 +89,5 @@ function task6($name, $text)
         fclose($fp);
     }
 }
+
 

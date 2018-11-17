@@ -16,5 +16,14 @@ echo "<p>", task2("/", $array_numbers), "</p>";
 $array_numbers = [1, 2, 3, 1, 5];
 echo "<p>", task2("/", $array_numbers), "</p>";
 
+$array_numbers = [1, 2, 3, 0, 5];
+echo "<p>", task2("/", $array_numbers), "</p>";
+
+$array_numbers = [1, 0, 3, 1, 5];
+echo "<p>", task2("*", $array_numbers), "</p>";
+
+
+$array_numbers = [1, a, 3, 1, 5];
+echo "<p>", task2("/", $array_numbers), "</p>";
 echo "</div>";
 

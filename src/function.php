@@ -20,19 +20,23 @@ function task2($tally, $dataArray)
 {
     $calc = null;
     foreach ($dataArray as $value) {
+        if (!is_numeric($value)) {
+            echo "В массиве должны быть только цифры INT and Real";
+            return null;
+        }
         switch ($tally) {
             case "+":
                 $calc += $value;
                 break;
             case "-":
-                if (empty($res)) {
+                if (empty($calc) and $calc !== 0) {
                     $calc = $value;
                 } else {
-                    $calc -= $value;
+                    $calc = $calc - $value;
                 }
                 break;
             case "*":
-                if (empty($calc)) {
+                if (empty($calc) and $calc !== 0) {
                     $calc = $value;
                 } else {
                     $calc *= $value;
@@ -51,8 +55,10 @@ function task2($tally, $dataArray)
                 break;
         }
     }
-
-    return $calc;
+    $str = implode(" ", $dataArray);
+    $fio = str_replace(' ', $tally, $str);
+    $finish = $fio . ' = ' . $calc;
+    return $finish;
 }
 
 
@@ -89,5 +95,6 @@ function task6($name, $text)
         fclose($fp);
     }
 }
+
 
 

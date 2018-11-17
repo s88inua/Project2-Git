@@ -19,7 +19,9 @@ function task1($strings, $logic_value)
 function task2($tally, $dataArray)
 {
     $calc = null;
+    $first_number = $calc = array_shift($dataArray);
     foreach ($dataArray as $value) {
+
         if (!is_numeric($value)) {
             echo "В массиве должны быть только цифры INT and Real";
             return null;
@@ -29,36 +31,23 @@ function task2($tally, $dataArray)
                 $calc += $value;
                 break;
             case "-":
-                if (empty($calc) and $calc !== 0) {
-                    $calc = $value;
-                } else {
-                    $calc = $calc - $value;
-                }
+                $calc -=  $value;
                 break;
             case "*":
-                if (empty($calc) and $calc !== 0) {
-                    $calc = $value;
-                } else {
-                    $calc *= $value;
-                }
+                $calc *= $value;
                 break;
             case "/":
                 if ($value == 0) {
                     echo " 0 в примере - делить нельзя";
                     return null;
                 }
-                if (empty($calc)) {
-                    $calc = $value;
-                } else {
-                    $calc /= $value;
-                }
+                $calc /= $value;
                 break;
         }
     }
     $str = implode(" ", $dataArray);
     $fio = str_replace(' ', $tally, $str);
-    $finish = $fio . ' = ' . $calc;
-    return $finish;
+    return $finish = $fio.' = '.$calc;
 }
 
 

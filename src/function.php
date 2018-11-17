@@ -47,7 +47,7 @@ function task2($tally, $dataArray)
     }
     $str = implode(" ", $dataArray);
     $fio = str_replace(' ', $tally, $str);
-    return $finish = $fio.' = '.$calc;
+    return $finish = $first_number.$tally.$fio.' = '.$calc;
 }
 
 

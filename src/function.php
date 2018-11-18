@@ -5,49 +5,32 @@
  * Date: 15/11/18
  * Time: 12:24
  */
-function task1($strings, $logic_value)
+function task1($strings, $glue)
 {
-    if ($logic_value == false) {
-        foreach ($strings as $value) {
-            echo '<p>' . $value . '</p>';
+    if ($glue == false) {
+        foreach ($strings as $string) {
+            echo '<p>' . $string . '</p>';
         }
     } else {
-        echo $comma_separated = implode(" ", $strings);
+        echo implode(" ", $strings);
     }
 }
 
-function task2($tally, $dataArray)
-{
-    $calc = null;
-    $first_number = $calc = array_shift($dataArray);
-    foreach ($dataArray as $value) {
-
-        if (!is_numeric($value)) {
+function task2() {
+    $arguments = func_get_args();
+    $operator = array_shift($arguments);
+    foreach ($arguments as $numbers){
+        if (!is_numeric($numbers)) {
             echo "В массиве должны быть только цифры INT and Real";
             return null;
-        }
-        switch ($tally) {
-            case "+":
-                $calc += $value;
-                break;
-            case "-":
-                $calc -=  $value;
-                break;
-            case "*":
-                $calc *= $value;
-                break;
-            case "/":
-                if ($value == 0) {
-                    echo " 0 в примере - делить нельзя";
-                    return null;
-                }
-                $calc /= $value;
-                break;
-        }
+        } }
+    if((in_array(0, $arguments)) == $arguments[0] and $operator == '/'){
+        echo "Делить на 0 нельзя";
+        return null;
+    } else {
+        $expression = implode($operator,$arguments);
+        echo $expression.'='. eval( "return $expression;");
     }
-    $str = implode(" ", $dataArray);
-    $fio = str_replace(' ', $tally, $str);
-    return $finish = $first_number.$tally.$fio.' = '.$calc;
 }
 
 
@@ -68,6 +51,32 @@ function task3($rows = 1, $cols = 1)
     }
 }
 
+
+function task4()
+{
+    $time_now = getdate();
+    echo  "<b>В формате 31.12.2018 23:59</b></br>";
+    echo  "Результат - ".$time_now['mday'].".".$time_now['mon'].".".$time_now['year'].". ".$time_now['hours'].":".$time_now['minutes']."</br>";
+    echo "<b>Unixtime время  31.12.2018 00:00:00 </b></br>";
+    echo "Результат - {$time_now['mday']}.{$time_now['mon']}.{$time_now['year']}"." "."{$time_now['hours']}".":"."{$time_now['minutes']}".":"."{$time_now['seconds']}</br>";
+}
+
+function task5($string, $example) {
+    if ($example == 1) {
+        $search_letter = str_replace('К', 'к', $string);
+        return $search_letter;
+    } elseif ($example == 2) {
+        $words_search = array('Карл', 'Клары', 'кораллы');
+        $words_insert = array('Вова', 'гАли', 'бананны');
+        $search_words = str_replace($words_search, $words_insert, $string);
+        return $search_words;
+
+    } else {
+        echo 'такой задачи нет';
+    }
+}
+
+/**/
 function task6($name, $text)
 {
     $file = $name . '.txt';

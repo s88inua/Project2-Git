@@ -3,14 +3,8 @@
  * Created by PhpStorm.
  * User: Me
  * Date: 15/11/18
- * Time: 12:59
+ * В переменную $example - устанавливаем значение от 1 до 2 в соотвествие с условием подзадачи
  */
-$text = 'Карл у Клары украл кораллы или Кораллы';
-$search_letter = preg_replace('/К/', ' ', $text);
-echo $search_letter;
-echo "<br>";
-
-echo "<b>Решение №2</b></br>";
-$text_change = 'Две бутылки лимонада';
-$change_word = preg_replace('/Две/', 'Три', $text_change);
-echo $change_word;
+$example = 2; //1 - первая задача , 2  - вторая задача
+$text = 'Карл у Клары украл кораллы';
+echo task5($text,$example);

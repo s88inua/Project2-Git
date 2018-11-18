@@ -7,23 +7,11 @@
  */
 require_once('src/function.php');
 
-echo "<h5>", "Задание 2", "</h5>";
-$array_numbers = [1, 2, 3, 0, 5];
-echo "<p>", task2("+", $array_numbers), "</p>";
-echo "<p>", task2("-", $array_numbers), "</p>";
-echo "<p>", task2("*", $array_numbers), "</p>";
-echo "<p>", task2("/", $array_numbers), "</p>";
-$array_numbers = [1, 2, 3, 1, 5];
-echo "<p>", task2("/", $array_numbers), "</p>";
-
-$array_numbers = [1, 2, 3, 0, 5];
-echo "<p>", task2("/", $array_numbers), "</p>";
-
-$array_numbers = [1, 0, 3, 1, 5];
-echo "<p>", task2("*", $array_numbers), "</p>";
-
-
-$array_numbers = [1, a, 3, 1, 5];
-echo "<p>", task2("/", $array_numbers), "</p>";
+echo "<h5>" , "Задание 2" , "</h5>";
+echo "<p>" , task2('+', 0, 3, 3, 4) , "</p>";
+echo "<p>" , task2('-', 1, 0, 2, 7) , "</p>";
+echo "<p>" , task2('*', 1, 2, 3) , "</p>";
+echo "<p>" , task2('/', 0, 1, 3) , "</p>";
+echo "<p>" , task2('/', 'a', 1, 3) , "</p>";
 echo "</div>";
 
